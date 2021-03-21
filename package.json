@@ -41,12 +41,14 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/jsonwebtoken": "^8.5.1",
     "@types/nodemailer": "^6.4.0",
+    "@types/swagger-ui-express": "^4.1.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.1",
     "nodemailer": "^6.4.14",
+    "swagger-ui-express": "^4.1.6",
     "uuidv4": "^6.2.4"
   }
 }

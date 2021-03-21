@@ -1,0 +1,409 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Mestre Pokemon API",
+        "description": "",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "servers": [
+        {
+            "url": "/",
+            "description": "Local api"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Pokemons",
+            "description": "API for pokemons"
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "components": {
+        "securitySchemes": {
+            "token": {
+                "type": "apiKey",
+                "scheme": "authorization",
+                "bearerFormat": "JWT",
+                "name": "authorization",
+                "in": "header"
+            }
+        }
+    },
+    "security": [
+        {
+            "token": []
+        }
+    ],
+    "paths": {
+        "/pokemons": {
+            "get": {
+                "security": {
+                    "token": []
+                },
+                "tags": [
+                    "Pokemons"
+                ],
+                "summary": "Get all pokemons in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Pokemons"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Pokemons"
+                ],
+                "security": {
+                    "token": []
+                },
+                "summary": "Create a new pokemon in system",
+                "requestBody": {
+                    "description": "Pokemon Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Pokemon"
+                            }
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Pokemon"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    }
+                }
+            }
+        },
+        "/pokemons/{id}": {
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the pokemon that we want to match",
+                    "type": "string"
+                }
+            ],
+            "get": {
+                "security": {
+                    "token": []
+                },
+                "tags": [
+                    "Pokemons"
+                ],
+                "summary": "Get pokemon with given ID",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "Pokemon with id",
+                        "schema": {
+                            "$ref": "#/definitions/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Pokemon"
+                        }
+                    },
+                    "404": {
+                        "description": "Failed. Pokemon not found."
+                    }
+                }
+            },
+            "put": {
+                "security": {
+                    "token": []
+                },
+                "summary": "Update pokemon with given ID",
+                "tags": [
+                    "Pokemons"
+                ],
+                "requestBody": {
+                    "description": "Pokemon Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/Pokemon"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "Pokemon with new values of properties",
+                        "schema": {
+                            "$ref": "#/definitions/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/Pokemon"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    },
+                    "404": {
+                        "description": "Failed. Pokemon not found."
+                    }
+                }
+            },
+            "delete": {
+                "security": {
+                    "token": []
+                },
+                "summary": "Delete pokemon with given ID",
+                "tags": [
+                    "Pokemons"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "Delete Pokemon with id",
+                        "schema": {
+                            "$ref": "#/definitions/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/id"
+                        }
+                    },
+                    "404": {
+                        "description": "Failed. Pokemon not found."
+                    }
+                }
+            }
+        },
+        "/users": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Create a new user in system",
+                "requestBody": {
+                    "description": "User Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/User"
+                            }
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    }
+                }
+            }
+        },
+        "/users/{id}": {
+            "put": {
+                "security": {
+                    "token": []
+                },
+                "summary": "Update user with given ID",
+                "tags": [
+                    "Users"
+                ],
+                "requestBody": {
+                    "description": "User Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/User"
+                            }
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "User with new values of properties",
+                        "schema": {
+                            "$ref": "#/definitions/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/User"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    },
+                    "404": {
+                        "description": "Failed. User not found."
+                    }
+                }
+            }
+        },
+        "/auth": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Authenticate a user in system",
+                "requestBody": {
+                    "description": "AuthUser Object",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/definitions/AuthUser"
+                            }
+                        }
+                    }
+                },
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "token": "string"
+                        }
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data."
+                    },
+                    "201": {
+                        "description": "Wrong user data"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "id": {
+            "properties": {
+                "uuid": {
+                    "type": "string"
+                }
+            }
+        },
+        "Pokemon": {
+            "type": "object",
+            "properties": {
+                "pokemonId": {
+                    "type": "Number"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            }
+        },
+        "Pokemons": {
+            "type": "object",
+            "properties": {
+                "pokemons": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/Pokemon"
+                    }
+                }
+            }
+        },
+        "User": {
+            "type": "object",
+            "properties": {
+                "nickname": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        },
+        "Users": {
+            "type": "object",
+            "properties": {
+                "users": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "$ref": "#/definitions/User"
+                    }
+                }
+            }
+        },
+        "AuthUser": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
