@@ -17,7 +17,7 @@ export default function ensureAuthenticated(
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
-    response.status(401).send('JWT Token is missing!');
+    return response.status(401).send('No API key found in request');
   }
 
   const token = authHeader;
@@ -27,6 +27,6 @@ export default function ensureAuthenticated(
     request.headers = { userId: sub };
     return next();
   } catch {
-    response.send('Invalid JWT Token!');
+    response.status(401).send('Invalid JWT Token!');
   }
 }

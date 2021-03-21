@@ -36,27 +36,23 @@
             "token": {
                 "type": "apiKey",
                 "scheme": "authorization",
-                "bearerFormat": "JWT",
                 "name": "authorization",
                 "in": "header"
             }
         }
     },
-    "security": [
-        {
-            "token": []
-        }
-    ],
     "paths": {
         "/pokemons": {
             "get": {
-                "security": {
-                    "token": []
-                },
                 "tags": [
                     "Pokemons"
                 ],
                 "summary": "Get all pokemons in system",
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -70,10 +66,12 @@
                 "tags": [
                     "Pokemons"
                 ],
-                "security": {
-                    "token": []
-                },
                 "summary": "Create a new pokemon in system",
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
                 "requestBody": {
                     "description": "Pokemon Object",
                     "required": true,
@@ -112,9 +110,11 @@
                 }
             ],
             "get": {
-                "security": {
-                    "token": []
-                },
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
                 "tags": [
                     "Pokemons"
                 ],
@@ -143,9 +143,11 @@
                 }
             },
             "put": {
-                "security": {
-                    "token": []
-                },
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
                 "summary": "Update pokemon with given ID",
                 "tags": [
                     "Pokemons"
@@ -188,9 +190,11 @@
                 }
             },
             "delete": {
-                "security": {
-                    "token": []
-                },
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
                 "summary": "Delete pokemon with given ID",
                 "tags": [
                     "Pokemons"
@@ -254,9 +258,11 @@
         },
         "/users/{id}": {
             "put": {
-                "security": {
-                    "token": []
-                },
+                "security": [
+                    {
+                        "token": []
+                    }
+                ],
                 "summary": "Update user with given ID",
                 "tags": [
                     "Users"
@@ -348,7 +354,7 @@
             "type": "object",
             "properties": {
                 "pokemonId": {
-                    "type": "Number"
+                    "type": "number"
                 },
                 "name": {
                     "type": "string"
