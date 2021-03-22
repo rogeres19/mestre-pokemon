@@ -1,11 +1,11 @@
-import { MongoPokemonsRepository } from "@src/repositories/implementations/MongoPokemonsRepository";
+import { ImplementationsPokemonsRepository } from "@src/repositories/implementations/";
 import { DeletePokemonController } from "./DeletePokemonController";
 import { DeletePokemonUseCase } from "./DeletePokemonUseCase";
 
-const mongoPokemonsRepository = new MongoPokemonsRepository()
+const implementationsPokemonsRepository = new ImplementationsPokemonsRepository()
 
 const deletePokemonUseCase = new DeletePokemonUseCase(
-    mongoPokemonsRepository
+    implementationsPokemonsRepository
 )
 
 const deletePokemonController = new DeletePokemonController(

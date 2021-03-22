@@ -1,17 +1,14 @@
-//import { PostgresUsersRepository } from "@src/repositories/implementations/PostgresUsersRepository";
-import { MongoUsersRepository } from "@src/repositories/implementations/MongoUsersRepository";
+import { ImplementationsUserRepository } from "@src/repositories/implementations/";
 
 import { AuthUserController } from "./AuthUserController";
 import { AuthUserUseCase } from "./AuthUserUseCase";
 
-//const postgresUsersRepository = new PostgresUsersRepository()
-const mongoUsersRepository = new MongoUsersRepository()
-
+const implementationsUsersRepository = new ImplementationsUserRepository()
 
 
 
 const authUserUseCase = new AuthUserUseCase(
-    mongoUsersRepository
+    implementationsUsersRepository
 
 )
 

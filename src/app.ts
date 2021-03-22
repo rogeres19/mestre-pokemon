@@ -1,5 +1,7 @@
 import express from 'express';
-import mongoose from 'mongoose'
+// import mongoose from 'mongoose'
+import database from './database/sequelize';
+
 // import cors from 'cors'
 import { router } from './routers';
 import swaggerUi from 'swagger-ui-express'
@@ -26,7 +28,9 @@ class App {
     }
 
     private database(): void {
-        mongoose.connect(`mongodb://${process.env.DB_HOST}:27017/pokemonDB`, { useNewUrlParser: true })
+        database;
+        ///mongoose.connect(`mongodb://${process.env.DB_HOST}:27017/pokemonDB`, { useNewUrlParser: true })
+
     }
 
     private routes(): void {

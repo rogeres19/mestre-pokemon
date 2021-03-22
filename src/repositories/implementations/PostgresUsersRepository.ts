@@ -1,26 +1,30 @@
 import { User } from "@src/entities/User";
 import { IUsersRepository } from "../IUsersRepository";
+import UserModel from '../../database/sequelize/models/User';
 
 export class PostgresUsersRepository implements IUsersRepository {
-    private users = <User[]>[];
 
     async findByEmail(email: string): Promise<User> {
-        const user = this.users.find(user => user.email === email);
+        const user = await UserModel.findOne({ where: { email } });
         return user;
     }
 
     async save(user: User): Promise<User> {
-        this.users.push(user);
-        return user;
+        return await UserModel.create(user);
     }
 
     async findById(id: string): Promise<User> {
-        const user = this.users.find(user => user.id === id);
+        const user = await UserModel.findOne({ where: { id } });
         return user;
     }
 
     async edit(user: User): Promise<User> {
-        return user;
+        const { id } = user;
+        await UserModel.update(user, {
+            where: { id },
+            fields: ['nickname', 'email', 'password']
+        });
+        return user
     }
 
 

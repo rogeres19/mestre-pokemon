@@ -18,7 +18,7 @@ export class EditUserUseCase {
         }
 
         const user = new User(data, data.id);
-        await this.usersRepository.save(user);
+        await this.usersRepository.edit(user);
 
     }
 }

@@ -12,7 +12,7 @@ const pokemonSchema = new Schema({
 const PokemonModel = model<Pokemon & Document>("Pokemon", pokemonSchema);
 
 export class MongoPokemonsRepository implements IPokemonsRepository {
-    async findByPokemonId(pokemonId: Number): Promise<Pokemon> {
+    async findByPokemonId(pokemonId: number): Promise<Pokemon> {
         const pokemon = await PokemonModel.findOne({ pokemonId });
         return pokemon;
     }

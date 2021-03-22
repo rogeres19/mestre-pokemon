@@ -1,12 +1,12 @@
-import { MongoPokemonsRepository } from "@src/repositories/implementations/MongoPokemonsRepository";
+import { ImplementationsPokemonsRepository } from "@src/repositories/implementations/";
 import { CreatePokemonController } from "./CreatePokemonController";
 import { CreatePokemonUseCase } from "./CreatePokemonUseCase";
 
-const mongoPokemonsRepository = new MongoPokemonsRepository()
+const implementationsPokemonRepository = new ImplementationsPokemonsRepository()
 
 
 const createPokemonUseCase = new CreatePokemonUseCase(
-    mongoPokemonsRepository
+    implementationsPokemonRepository
 )
 
 const createPokemonController = new CreatePokemonController(
