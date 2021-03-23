@@ -1,5 +1,5 @@
 import Sequelize, { Model } from 'sequelize';
-import database from '../index';
+import { database } from '../index';
 
 class PokemonModel extends Model {
     public id!: string;

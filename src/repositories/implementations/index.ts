@@ -1,8 +1,10 @@
+import { config } from '../../config/database'
 import { PostgresUsersRepository } from "@src/repositories/implementations/PostgresUsersRepository";
 import { PostgresPokemonsRepository } from "@src/repositories/implementations/PostgresPokemonsRepository";
-export { PostgresUsersRepository as ImplementationsUserRepository, PostgresPokemonsRepository as ImplementationsPokemonsRepository }
+import { MongoUsersRepository } from "@src/repositories/implementations/MongoUsersRepository";
+import { MongoPokemonsRepository } from "@src/repositories/implementations/MongoPokemonsRepository";
 
-// import { MongoUsersRepository } from "@src/repositories/implementations/MongoUsersRepository";
-// import { MongoPokemonsRepository } from "@src/repositories/implementations/MongoPokemonsRepository";
-// export { MongoUsersRepository as ImplementationsUserRepository, MongoPokemonsRepository as ImplementationsPokemonsRepository }
+const ImplementationsUserRepository = config.selected_db == "postgres" ? PostgresUsersRepository : MongoUsersRepository;
+const ImplementationsPokemonsRepository = config.selected_db == "postgres" ? PostgresPokemonsRepository : MongoPokemonsRepository;
 
+export { ImplementationsUserRepository, ImplementationsPokemonsRepository }

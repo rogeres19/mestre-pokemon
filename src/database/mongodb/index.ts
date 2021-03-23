@@ -15,5 +15,5 @@ class Database implements IDatabase {
 
 const database: Database = new Database();
 
-export default database;
+export { database };
 

@@ -6,6 +6,7 @@ services:
     build: .
     environment:
       - NODE_ENV=development
+      - SELECTED_DB=$banco
     command: yarn dev
     ports:
       - "3333:3333"
