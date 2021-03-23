@@ -1,8 +1,5 @@
 import express from 'express';
-//import mongoose from 'mongoose'
-//import database from './database/sequelize';
 import database from './database';
-
 // import cors from 'cors'
 import { router } from './routers';
 import swaggerUi from 'swagger-ui-express'
