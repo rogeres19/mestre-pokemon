@@ -1,6 +1,7 @@
 import express from 'express';
-// import mongoose from 'mongoose'
-import database from './database/sequelize';
+//import mongoose from 'mongoose'
+//import database from './database/sequelize';
+import database from './database';
 
 // import cors from 'cors'
 import { router } from './routers';
@@ -28,8 +29,7 @@ class App {
     }
 
     private database(): void {
-        database;
-        ///mongoose.connect(`mongodb://${process.env.DB_HOST}:27017/pokemonDB`, { useNewUrlParser: true })
+        database.init();
 
     }
 

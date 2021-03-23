@@ -1,13 +1,7 @@
 import { User } from "@src/entities/User";
 import { IUsersRepository } from "../IUsersRepository";
-import { model, Schema, Document } from "mongoose";
-
-const userSchema = new Schema({
-    id: { type: String, required: false, unique: true },
-    nickname: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-});
+import { model, Document } from "mongoose";
+import userSchema from "../../database/mongodb/models/User";
 
 const UserModel = model<User & Document>("User", userSchema);
 

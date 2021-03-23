@@ -1,8 +1,8 @@
 import Sequelize from 'sequelize';
-
+import { IDatabase } from "../IDatabase"
 import { config } from '../../config/database';
 
-class Database {
+class Database implements IDatabase {
     public connection: Sequelize.Sequelize;
 
     constructor() {

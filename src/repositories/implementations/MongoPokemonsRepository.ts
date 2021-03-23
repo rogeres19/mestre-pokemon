@@ -1,13 +1,7 @@
 import { Pokemon } from "@src/entities/Pokemon";
 import { IPokemonsRepository } from "../IPokemonRepository";
-import { model, Schema, Document } from "mongoose";
-
-const pokemonSchema = new Schema({
-    id: { type: String, required: false, unique: true },
-    pokemonId: { type: Number, required: true, unique: true },
-    name: { type: String, required: true },
-    type: { type: String, required: true },
-});
+import { model, Document } from "mongoose";
+import pokemonSchema from "../../database/mongodb/models/Pokemon"
 
 const PokemonModel = model<Pokemon & Document>("Pokemon", pokemonSchema);
 
