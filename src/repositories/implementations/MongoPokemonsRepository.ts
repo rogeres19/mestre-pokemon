@@ -1,9 +1,7 @@
 import { Pokemon } from "@src/entities/Pokemon";
 import { IPokemonsRepository } from "../IPokemonRepository";
-import { model, Document } from "mongoose";
-import pokemonSchema from "../../database/mongodb/models/Pokemon"
+import PokemonModel from "../../database/mongodb/models/Pokemon"
 
-const PokemonModel = model<Pokemon & Document>("Pokemon", pokemonSchema);
 
 export class MongoPokemonsRepository implements IPokemonsRepository {
     async findByPokemonId(pokemonId: number): Promise<Pokemon> {

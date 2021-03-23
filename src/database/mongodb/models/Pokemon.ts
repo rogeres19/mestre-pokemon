@@ -1,5 +1,5 @@
-import { Schema } from "mongoose";
-
+import { model, Document, Schema } from "mongoose";
+import { Pokemon } from "@src/entities/Pokemon";
 
 const pokemonSchema = new Schema({
     id: { type: String, required: false, unique: true },
@@ -8,4 +8,6 @@ const pokemonSchema = new Schema({
     type: { type: String, required: true },
 });
 
-export default pokemonSchema;
+const PokemonModel = model<Pokemon & Document>("Pokemon", pokemonSchema);
+
+export default PokemonModel;

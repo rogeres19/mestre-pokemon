@@ -1,9 +1,7 @@
 import { User } from "@src/entities/User";
 import { IUsersRepository } from "../IUsersRepository";
-import { model, Document } from "mongoose";
-import userSchema from "../../database/mongodb/models/User";
+import UserModel from "../../database/mongodb/models/User"
 
-const UserModel = model<User & Document>("User", userSchema);
 
 export class MongoUsersRepository implements IUsersRepository {
     async findByEmail(email: string): Promise<User> {
