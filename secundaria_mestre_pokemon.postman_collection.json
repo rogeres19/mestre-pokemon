@@ -1,0 +1,829 @@
+{
+	"info": {
+		"_postman_id": "4b9c8a63-8056-45fc-bf10-6f36b3d676ec",
+		"name": "mestre pokemon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"rogeres19@teste.com\",\n    \"password\": \"123456\",\n    \"nickname\":\"ro\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"rogeres19@teste.com\",\n    \"password\": \"123456\",\n    \"nickname\":\"ro\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "91"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5b-y1SRhRwMewuXSF2fzVO9kFTv4DY\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Mar 2021 22:37:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"email\": \"rogeres19@teste.com\",\n    \"nickname\": \"ro\",\n    \"id\": \"e5af05cd-7b42-4ab1-adfb-ab29b71221af\"\n}"
+				}
+			]
+		},
+		{
+			"name": "auth user(Login)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"rogeres19@teste.com\",\n  \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "auth user(Login)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"rogeres19@teste.com\",\n  \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "200"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c8-IkFoxQRM4Ad2Arl6n0ws0DcA85Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Mar 2021 22:46:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTY0NTMxOTcsImV4cCI6MTYxNjUzOTU5Nywic3ViIjoiZTVhZjA1Y2QtN2I0Mi00YWIxLWFkZmItYWIyOWI3MTIyMWFmIn0.pM5Ay98EoWjEIYWk2V9-vZxhcKdXTNWR_CZwoa2_ttI\"\n}"
+				},
+				{
+					"name": "auth user(Login)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"rogeres19@gmail.com\",\n  \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "200"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c8-xiUhFUs1zAcDqy5PpMU3Vw6kLrc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Mar 2021 22:44:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTY0NTMwNDUsImV4cCI6MTYxNjUzOTQ0NSwic3ViIjoiYTg3MTViNTktN2QwNC00YWRhLTliNjYtOWQxMDY1NzVhZWJhIn0.7g5hQSeceDjAFHI_RFuHoXCNM2JYPKU1hLM7_rtR2Y8\"\n}"
+				}
+			]
+		},
+		{
+			"name": "edit user",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTY0NTMxOTcsImV4cCI6MTYxNjUzOTU5Nywic3ViIjoiZTVhZjA1Y2QtN2I0Mi00YWIxLWFkZmItYWIyOWI3MTIyMWFmIn0.pM5Ay98EoWjEIYWk2V9-vZxhcKdXTNWR_CZwoa2_ttI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"rogeres19@teste.com\",\n    \"password\": \"klb123\",\n    \"nickname\":\"ger\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/users/96768e18-a4a7-4655-92b2-20b96bdb4a33",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"users",
+						"96768e18-a4a7-4655-92b2-20b96bdb4a33"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit user",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTY0NTMxOTcsImV4cCI6MTYxNjUzOTU5Nywic3ViIjoiZTVhZjA1Y2QtN2I0Mi00YWIxLWFkZmItYWIyOWI3MTIyMWFmIn0.pM5Ay98EoWjEIYWk2V9-vZxhcKdXTNWR_CZwoa2_ttI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"rogeres19@teste.com\",\n    \"password\": \"klb123\",\n    \"nickname\":\"ger\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/users/96768e18-a4a7-4655-92b2-20b96bdb4a33",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"users",
+								"96768e18-a4a7-4655-92b2-20b96bdb4a33"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "12"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c-agzEXS5X6hkHLi69142RrppGLxQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Mar 2021 23:18:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "User updated"
+				}
+			]
+		},
+		{
+			"name": "create pokemon",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"pokemonId\": 1,\n  \"name\": \"pokemond\",\n  \"type\": \"ave\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/pokemons",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"pokemons"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create pokemon",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pokemonId\": 1,\n  \"name\": \"pokemond\",\n  \"type\": \"ave\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/pokemons",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pokemons"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "168"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a8-cKIhND0OJT6UrwQg1A7xuE70QmI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Mar 2021 23:27:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"pokemonId\": 1,\n    \"name\": \"pokemond\",\n    \"type\": \"ave\",\n    \"id\": \"dc3b5479-460a-47ed-ad6e-0569fab560f5\",\n    \"updatedAt\": \"2021-03-22T23:27:35.602Z\",\n    \"createdAt\": \"2021-03-22T23:27:35.602Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "edit pokemon",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"pokemonId\": 1,\n  \"name\": \"hubro\",\n  \"type\": \"peixe\"\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/pokemons/dc3b5479-460a-47ed-ad6e-0569fab560f5",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"pokemons",
+						"dc3b5479-460a-47ed-ad6e-0569fab560f5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit pokemon",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"pokemonId\": 1,\n  \"name\": \"hubro\",\n  \"type\": \"peixe\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/pokemons/dc3b5479-460a-47ed-ad6e-0569fab560f5",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pokemons",
+								"dc3b5479-460a-47ed-ad6e-0569fab560f5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "89"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"59-8ALuOf0TtUMmqyqJ9MdXJ0/8Dkg\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Mar 2021 23:29:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"dc3b5479-460a-47ed-ad6e-0569fab560f5\",\n    \"name\": \"hubro\",\n    \"pokemonId\": 1,\n    \"type\": \"peixe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "details pokemon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3333/pokemons/dc3b5479-460a-47ed-ad6e-0569fab560f5",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"pokemons",
+						"dc3b5479-460a-47ed-ad6e-0569fab560f5"
+					]
+				},
+				"description": "get pokemon details"
+			},
+			"response": [
+				{
+					"name": "details pokemon",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/pokemons/dc3b5479-460a-47ed-ad6e-0569fab560f5",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pokemons",
+								"dc3b5479-460a-47ed-ad6e-0569fab560f5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "167"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a7-cxEGIOD8zoZqF6r3K1hdlHZCIhE\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Mar 2021 23:31:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"dc3b5479-460a-47ed-ad6e-0569fab560f5\",\n    \"pokemonId\": 1,\n    \"name\": \"hubro\",\n    \"type\": \"peixe\",\n    \"createdAt\": \"2021-03-22T23:27:35.602Z\",\n    \"updatedAt\": \"2021-03-22T23:29:35.556Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "list pokemons",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": [
+				{
+					"name": "list pokemons",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/pokemons",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pokemons"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "336"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"150-cCQlzaxxTzLHD/iXLpa5/aUbiGk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Mar 2021 23:33:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"dc3b5479-460a-47ed-ad6e-0569fab560f5\",\n        \"pokemonId\": 1,\n        \"name\": \"hubro\",\n        \"type\": \"peixe\",\n        \"createdAt\": \"2021-03-22T23:27:35.602Z\",\n        \"updatedAt\": \"2021-03-22T23:29:35.556Z\"\n    },\n    {\n        \"id\": \"f3206ede-9594-4b0c-85b0-3e3032524a6c\",\n        \"pokemonId\": 10,\n        \"name\": \"teste\",\n        \"type\": \"ave\",\n        \"createdAt\": \"2021-03-22T23:32:51.298Z\",\n        \"updatedAt\": \"2021-03-22T23:32:51.298Z\"\n    }\n]"
+				},
+				{
+					"name": "list pokemons",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/pokemons",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pokemons"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a9-jSIF1lDXn165WmF1OWCaPzGwrBU\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Mar 2021 23:30:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"dc3b5479-460a-47ed-ad6e-0569fab560f5\",\n        \"pokemonId\": 1,\n        \"name\": \"hubro\",\n        \"type\": \"peixe\",\n        \"createdAt\": \"2021-03-22T23:27:35.602Z\",\n        \"updatedAt\": \"2021-03-22T23:29:35.556Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "delete pokemon",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3333/pokemons/f3206ede-9594-4b0c-85b0-3e3032524a6c",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"pokemons",
+						"f3206ede-9594-4b0c-85b0-3e3032524a6c"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete pokemon",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/pokemons/f3206ede-9594-4b0c-85b0-3e3032524a6c",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pokemons",
+								"f3206ede-9594-4b0c-85b0-3e3032524a6c"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "15"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f-9dfTHqJ4q1ceJpuC1M9cM32KtoQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 22 Mar 2021 23:33:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "pokemon deleted"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MTY0NTMxOTcsImV4cCI6MTYxNjUzOTU5Nywic3ViIjoiZTVhZjA1Y2QtN2I0Mi00YWIxLWFkZmItYWIyOWI3MTIyMWFmIn0.pM5Ay98EoWjEIYWk2V9-vZxhcKdXTNWR_CZwoa2_ttI",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
