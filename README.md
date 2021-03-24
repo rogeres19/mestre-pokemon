@@ -11,8 +11,9 @@ Ambas funcionam com Mongodb e PostgresSQL
 
 
 ### Requisitos
-Docker
-Docker-Compose
+* Docker
+
+* Docker-Compose
 
 ### Como iniciar a aplicação principal?
 
