@@ -1,16 +1,23 @@
 # Desafio Mestre Pokemon
 Api para Mestre Pokemon
 
+Existem duas versões da api:
+A versão principal a propriedade pokemonId é auto gerada e não é um editável;(branch master)
+A versão secundária a propriedade pokemonId é um campo editável;(branch version_pokemonid_editable)
+
+Ambas versões funcionam com Mongodb e PostgresSQL
 ### Requisitos
 Docker
 Docker-Compose
 
 ### Como iniciar a aplicação?
 
-1. Rode o comando `docker-compose up` na pasta raiz do código para instalar as dependências e iniciar aplicação com banco Mongodb;
+1. Clonar/Copiar projeto (branch master)
+
+2. Rode o comando `docker-compose up` na pasta raiz do código para instalar as dependências e iniciar aplicação com banco Mongodb;
 
 ou 
-1. Rode o comando `banco=postgres docker-compose up` na pasta raiz do código para instalar as dependências e iniciar aplicação com banco postgres;
+3. Rode o comando `banco=postgres docker-compose up` na pasta raiz do código para instalar as dependências e iniciar aplicação com banco postgres;
 
 
 ### Como acessar a api?
