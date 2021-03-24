@@ -1,11 +1,11 @@
-import Sequelize, { Model } from 'sequelize';
-import { database } from '../index';
+import Sequelize, { Model } from 'sequelize'
+import { database } from '../index'
 
 class UserModel extends Model {
-    public id!: string;
-    public nickname!: string;
-    public email!: string;
-    public password!: string;
+    public id!: string
+    public nickname!: string
+    public email!: string
+    public password!: string
 }
 
 UserModel.init(
@@ -25,7 +25,7 @@ UserModel.init(
         tableName: "users",
         freezeTableName: true
     }
-);
+)
 
 
-export default UserModel;
+export default UserModel

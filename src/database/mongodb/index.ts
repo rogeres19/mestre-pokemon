@@ -1,19 +1,20 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 import { IDatabase } from "../IDatabase"
+import { config } from '../../config/database'
+
 
 class Database implements IDatabase {
 
     constructor() {
-        this.init();
+        this.init()
     }
 
     init(): void {
-        mongoose.connect(`mongodb://${process.env.MONGO_DB_HOST}:27017/${process.env.MONGO_DB_NAME}`, { useNewUrlParser: true });
+        mongoose.connect(`mongodb://${config.mongodb.host}:27017/${config.mongodb.database}`, { useNewUrlParser: true })
 
     }
 }
 
-const database: Database = new Database();
+const database: Database = new Database()
 
-export { database };
-
+export { database }

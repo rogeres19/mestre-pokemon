@@ -1,6 +1,6 @@
-import { User } from "@src/entities/User";
-import { IUsersRepository } from "@src/repositories/IUsersRepository";
-import { EditUserRequestDTO } from "./EditUserDTO";
+import { User } from "@src/entities/User"
+import { IUsersRepository } from "@src/repositories/IUsersRepository"
+import { EditUserRequestDTO } from "./EditUserDTO"
 
 export class EditUserUseCase {
 
@@ -11,14 +11,14 @@ export class EditUserUseCase {
 
     async execute(data: EditUserRequestDTO) {
 
-        const userExists = await this.usersRepository.findById(data.id);
+        const userExists = await this.usersRepository.findById(data.id)
 
         if (!userExists) {
             throw new Error('User does not exists.')
         }
 
-        const user = new User(data, data.id);
-        await this.usersRepository.edit(user);
+        const user = new User(data, data.id)
+        return await this.usersRepository.edit(user)
 
     }
 }

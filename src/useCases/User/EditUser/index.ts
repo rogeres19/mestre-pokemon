@@ -1,6 +1,6 @@
-import { ImplementationsUserRepository } from "@src/repositories/implementations/";
-import { EditUserController } from "./EditUserController";
-import { EditUserUseCase } from "./EditUserUseCase";
+import { ImplementationsUserRepository } from "@src/repositories/implementations/"
+import { EditUserController } from "./EditUserController"
+import { EditUserUseCase } from "./EditUserUseCase"
 
 
 const implementationsUsersRepository = new ImplementationsUserRepository()

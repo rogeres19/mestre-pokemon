@@ -1,7 +1,7 @@
-import { ImplementationsUserRepository } from "@src/repositories/implementations/";
+import { ImplementationsUserRepository } from "@src/repositories/implementations/"
 
-import { AuthUserController } from "./AuthUserController";
-import { AuthUserUseCase } from "./AuthUserUseCase";
+import { AuthUserController } from "./AuthUserController"
+import { AuthUserUseCase } from "./AuthUserUseCase"
 
 const implementationsUsersRepository = new ImplementationsUserRepository()
 

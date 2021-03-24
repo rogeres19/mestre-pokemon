@@ -8,16 +8,16 @@ export class EditUserController {
     ) { }
 
     async handle(request: Request, response: Response): Promise<Response | void> {
-        const { id } = request.params;
-        const { email, nickname, password } = request.body;
+        const { id } = request.params
+        const { email, nickname, password } = request.body
         if (!id)
-            return response.status(400).send("please, set params id")
+            return response.status(400).send({ message: "please, set params id" })
         try {
-            await this.editUserUseCase.execute({
+            const user = await this.editUserUseCase.execute({
                 id, email, nickname, password
             })
 
-            response.status(200).send('User updated')
+            response.status(200).send(user)
         } catch (err) {
             return response.status(400).json({
                 message: err?.message

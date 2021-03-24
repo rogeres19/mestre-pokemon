@@ -1,3 +1,3 @@
 export interface DeletePokemonRequestDTO {
-    id: string,
+    pokemonId: number
 }

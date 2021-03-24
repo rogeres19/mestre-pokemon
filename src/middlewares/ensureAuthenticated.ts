@@ -1,12 +1,12 @@
-import { Response, NextFunction, Request } from 'express';
-import { verify } from 'jsonwebtoken';
-import authConfig from '../config/auth';
+import { Response, NextFunction, Request } from 'express'
+import { verify } from 'jsonwebtoken'
+import authConfig from '../config/auth'
 
 
 interface TokenPayload {
-  iat: number;
-  exp: number;
-  sub: string;
+  iat: number
+  exp: number
+  sub: string
 }
 
 export default function ensureAuthenticated(
@@ -14,19 +14,20 @@ export default function ensureAuthenticated(
   response: Response,
   next: NextFunction,
 ): any {
-  const authHeader = request.headers.authorization;
+  const authHeader = request.headers.authorization
 
   if (!authHeader) {
-    return response.status(401).send('No API key found in request');
+    return response.status(401).send('No API key found in request')
   }
 
-  const token = authHeader;
+  const token = authHeader
+
   try {
-    const decoded = verify(token, authConfig.jwt.secret);
-    const { sub } = decoded as TokenPayload;
-    request.headers = { userId: sub };
-    return next();
+    const decoded = verify(token, authConfig.jwt.secret)
+    const { sub } = decoded as TokenPayload
+    request.headers = { userId: sub }
+    return next()
   } catch {
-    response.status(401).send('Invalid JWT Token!');
+    response.status(401).send('Invalid JWT Token!')
   }
 }

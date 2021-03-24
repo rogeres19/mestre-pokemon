@@ -9,11 +9,12 @@ export class EditPokemonController {
 
     async handle(request: Request, response: Response): Promise<Response | void> {
         const { id } = request.params;
-        const { name, pokemonId, type } = request.body;
+        const { name, type } = request.body;
         if (!id)
-            return response.status(400).send("please, set params id")
+            return response.status(400).send({ message: "please, set params id" })
         try {
-            const res = await this.editPokemonUseCase.execute({ id, name, pokemonId, type })
+            const pokemonId = Number(id);
+            const res = await this.editPokemonUseCase.execute({ name, pokemonId, type })
             response.status(200).send(res)
         } catch (err) {
             return response.status(400).json({

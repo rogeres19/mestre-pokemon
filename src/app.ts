@@ -1,7 +1,7 @@
-import express from 'express';
-import database from './database';
+import express from 'express'
+import database from './database'
 // import cors from 'cors'
-import { router } from './routers';
+import { router } from './routers'
 import swaggerUi from 'swagger-ui-express'
 import * as swaggerDocument from './swagger.json'
 
@@ -26,7 +26,7 @@ class App {
     }
 
     private database(): void {
-        database.init();
+        database.init()
 
     }
 

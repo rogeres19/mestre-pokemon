@@ -1,6 +1,6 @@
-import { ImplementationsUserRepository } from "@src/repositories/implementations/";
-import { CreateUserController } from "./CreateUserController";
-import { CreateUserUseCase } from "./CreateUserUseCase";
+import { ImplementationsUserRepository } from "@src/repositories/implementations/"
+import { CreateUserController } from "./CreateUserController"
+import { CreateUserUseCase } from "./CreateUserUseCase"
 
 const implementationsUserRepository = new ImplementationsUserRepository()
 

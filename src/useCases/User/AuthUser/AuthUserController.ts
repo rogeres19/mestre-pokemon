@@ -8,15 +8,15 @@ export class AuthUserController {
     ) { }
 
     async handle(request: Request, response: Response): Promise<Response | void> {
-        const { email, password } = request.body;
+        const { email, password } = request.body
         if (!email || !password)
-            return response.status(400).send("some fields empty")
+            return response.status(400).send({ message: "some fields is empty" })
         try {
             let res = await this.authUserUseCase.execute({
                 email, password
             })
 
-            response.status(200).send(res);
+            response.status(200).send(res)
         } catch (err) {
             return response.status(400).json({
                 message: err?.message

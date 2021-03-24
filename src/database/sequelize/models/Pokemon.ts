@@ -1,21 +1,19 @@
-import Sequelize, { Model } from 'sequelize';
-import { database } from '../index';
+import Sequelize, { Model } from 'sequelize'
+import { database } from '../index'
 
 class PokemonModel extends Model {
-    public id!: string;
-    public pokemonId!: number;
-    public name!: string;
-    public type!: string;
+    public pokemonId!: number
+    public name!: string
+    public type!: string
 }
 
 PokemonModel.init(
     {
-        id: {
-            type: Sequelize.UUID,
-            defaultValue: Sequelize.UUID,
-            primaryKey: true
+        pokemonId: {
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
         },
-        pokemonId: Sequelize.INTEGER,
         name: Sequelize.STRING,
         type: Sequelize.STRING,
     },
@@ -24,7 +22,7 @@ PokemonModel.init(
         tableName: "pokemons",
         freezeTableName: true
     }
-);
+)
 
 
-export default PokemonModel;
+export default PokemonModel

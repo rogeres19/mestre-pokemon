@@ -8,12 +8,14 @@ export class DeletePokemonController {
     ) { }
 
     async handle(request: Request, response: Response): Promise<Response | void> {
-        const { id } = request.params;
-        if (!id)
-            return response.status(400).send("pokemon does not exist")
+        const { id } = request.params
+        console.log(id)
+        if (!!!id)
+            return response.status(400).send({ message: "pokemon does not exist" })
         try {
-            await this.deletePokemonUseCase.execute({ id })
-            response.status(200).send('pokemon deleted')
+            const pokemonId = Number(id)
+            await this.deletePokemonUseCase.execute({ pokemonId })
+            response.status(200).send({ message: 'pokemon has been successfully deleted' })
         } catch (err) {
             return response.status(400).json({
                 message: err?.message

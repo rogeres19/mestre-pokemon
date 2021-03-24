@@ -11,14 +11,14 @@ export class EditPokemonUseCase {
 
     async execute(data: EditPokemonRequestDTO) {
 
-        const pokemonExists = await this.pokemonsRepository.findById(data.id);
+        const pokemonExists = await this.pokemonsRepository.findByPokemonId(data.pokemonId)
 
         if (!pokemonExists) {
             throw new Error('Pokemon does not exists.')
         }
 
-        const pokemon = new Pokemon(data, data.id);
-        return await this.pokemonsRepository.edit(pokemon);
+        const pokemon = new Pokemon(data, data.pokemonId)
+        return await this.pokemonsRepository.edit(pokemon)
 
     }
 }

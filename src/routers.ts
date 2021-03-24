@@ -7,7 +7,7 @@ import { editPokemonController } from "./useCases/Pokemon/EditPokemon"
 import { deletePokemonController } from "./useCases/Pokemon/DeletePokemon"
 import { detailsPokemonController } from "./useCases/Pokemon/DetailsPokemon"
 import { authUserController } from "./useCases/User/AuthUser"
-import ensureAuthenticated from './middlewares/ensureAuthenticated';
+import ensureAuthenticated from './middlewares/ensureAuthenticated'
 
 
 
@@ -18,7 +18,7 @@ router.post('/auth', (request, response) => {
 })
 
 router.get('/', (request, response) => {
-    return response.json("API POKEMON");
+    return response.json("API POKEMON")
 })
 
 router.post('/users', (request, response) => {
@@ -53,9 +53,6 @@ router.get('/pokemons/:id', (request, response) => {
 router.delete('/pokemons/:id', (request, response) => {
     return deletePokemonController.handle(request, response)
 })
-
-
-
 
 
 export { router }

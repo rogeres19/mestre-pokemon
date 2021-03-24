@@ -1,4 +1,4 @@
 
 export interface IDatabase {
-    init(): void;
+    init(): void
 }

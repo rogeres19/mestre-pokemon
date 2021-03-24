@@ -8,11 +8,12 @@ export class DetailsPokemonController {
     ) { }
 
     async handle(request: Request, response: Response): Promise<Response | void> {
-        const { id } = request.params;
+        const { id } = request.params
         if (!id)
-            return response.status(400).send("pokemon does not exist")
+            return response.status(400).send({ message: "pokemon does not exist" })
         try {
-            const res = await this.detailsPokemonUseCase.execute({ id })
+            const pokemonId = Number(id)
+            const res = await this.detailsPokemonUseCase.execute({ pokemonId })
             response.status(200).send(res)
         } catch (err) {
             return response.status(400).json({

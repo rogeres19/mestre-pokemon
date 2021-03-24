@@ -1,5 +1,5 @@
-import { IPokemonsRepository } from "@src/repositories/IPokemonRepository";
-import { DeletePokemonRequestDTO } from "./DeletePokemonDTO";
+import { IPokemonsRepository } from "@src/repositories/IPokemonRepository"
+import { DeletePokemonRequestDTO } from "./DeletePokemonDTO"
 
 export class DeletePokemonUseCase {
 
@@ -10,13 +10,13 @@ export class DeletePokemonUseCase {
 
     async execute(data: DeletePokemonRequestDTO) {
 
-        const pokemonExists = await this.pokemonsRepository.findById(data.id);
+        const pokemonExists = await this.pokemonsRepository.findByPokemonId(data.pokemonId)
 
         if (!pokemonExists) {
             throw new Error('Pokemon does not exists.')
         }
 
-        await this.pokemonsRepository.delete(data.id);
+        await this.pokemonsRepository.delete(data.pokemonId)
 
     }
 }

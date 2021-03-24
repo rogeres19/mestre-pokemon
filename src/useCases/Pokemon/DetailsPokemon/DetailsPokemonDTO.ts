@@ -1,3 +1,3 @@
 export interface DetailsPokemonRequestDTO {
-    id: string,
+    pokemonId: number,
 }

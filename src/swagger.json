@@ -118,15 +118,15 @@
                 "tags": [
                     "Pokemons"
                 ],
-                "summary": "Get pokemon with given ID",
+                "summary": "Get pokemon with given PokemonId",
                 "parameters": [
                     {
                         "in": "path",
                         "name": "id",
                         "required": true,
-                        "description": "Pokemon with id",
+                        "description": "Pokemon id",
                         "schema": {
-                            "$ref": "#/definitions/id"
+                            "$ref": "#/definitions/pokemonId"
                         }
                     }
                 ],
@@ -148,7 +148,7 @@
                         "token": []
                     }
                 ],
-                "summary": "Update pokemon with given ID",
+                "summary": "Update pokemon with given PokemonId",
                 "tags": [
                     "Pokemons"
                 ],
@@ -170,7 +170,7 @@
                         "required": true,
                         "description": "Pokemon with new values of properties",
                         "schema": {
-                            "$ref": "#/definitions/id"
+                            "$ref": "#/definitions/pokemonId"
                         }
                     }
                 ],
@@ -195,7 +195,7 @@
                         "token": []
                     }
                 ],
-                "summary": "Delete pokemon with given ID",
+                "summary": "Delete pokemon with given PokemonId",
                 "tags": [
                     "Pokemons"
                 ],
@@ -204,17 +204,17 @@
                         "in": "path",
                         "name": "id",
                         "required": true,
-                        "description": "Delete Pokemon with id",
+                        "description": "Delete Pokemon by pokemon id",
                         "schema": {
-                            "$ref": "#/definitions/id"
+                            "$ref": "#/definitions/pokemonId"
                         }
                     }
                 ],
                 "responses": {
                     "200": {
-                        "description": "OK",
+                        "description": "pokemon deleted",
                         "schema": {
-                            "$ref": "#/definitions/id"
+                            "$ref": "#/definitions/pokemonId"
                         }
                     },
                     "404": {
@@ -350,12 +350,12 @@
                 }
             }
         },
+        "pokemonId": {
+            "type": "number"
+        },
         "Pokemon": {
             "type": "object",
             "properties": {
-                "pokemonId": {
-                    "type": "number"
-                },
                 "name": {
                     "type": "string"
                 },

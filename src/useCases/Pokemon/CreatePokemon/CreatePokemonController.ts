@@ -8,13 +8,13 @@ export class CreatePokemonController {
     ) { }
 
     async handle(request: Request, response: Response): Promise<Response | void> {
-        const { pokemonId, name, type } = request.body;
-        if (!pokemonId || !name || !type)
-            return response.status(400).send("some fields empty")
+        const { name, type } = request.body
+        if (!name || !type)
+            return response.status(400).send({ message: "some fields empty" })
 
         try {
             const res = await this.createPokemonUseCase.execute({
-                pokemonId, name, type
+                name, type
             })
 
             response.status(200).send(res)

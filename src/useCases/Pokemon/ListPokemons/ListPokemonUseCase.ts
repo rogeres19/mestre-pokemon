@@ -1,5 +1,5 @@
-import { IPokemonsRepository } from "@src/repositories/IPokemonRepository";
-import { ListPokemonRequestDTO } from "./ListPokemonDTO";
+import { IPokemonsRepository } from "@src/repositories/IPokemonRepository"
+import { ListPokemonRequestDTO } from "./ListPokemonDTO"
 
 export class ListPokemonUseCase {
 
@@ -9,7 +9,7 @@ export class ListPokemonUseCase {
 
 
     async execute(data: ListPokemonRequestDTO) {
-        const pokemons = await this.pokemonRepository.list();
+        const pokemons = await this.pokemonRepository.list()
         return pokemons;
 
     }

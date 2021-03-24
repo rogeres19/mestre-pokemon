@@ -1,6 +1,6 @@
-import { ImplementationsPokemonsRepository } from "@src/repositories/implementations/";
-import { CreatePokemonController } from "./CreatePokemonController";
-import { CreatePokemonUseCase } from "./CreatePokemonUseCase";
+import { ImplementationsPokemonsRepository } from "@src/repositories/implementations/"
+import { CreatePokemonController } from "./CreatePokemonController"
+import { CreatePokemonUseCase } from "./CreatePokemonUseCase"
 
 const implementationsPokemonRepository = new ImplementationsPokemonsRepository()
 
